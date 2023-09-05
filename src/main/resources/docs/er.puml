@@ -1,0 +1,31 @@
+@startuml
+entity "User" as user {
+*id : UUID
+--
+*name : text
+* surname : text
+* meals: meal
+* email : text
+*password : text
+}
+
+entity "Meal" as meal {
+*id : UUID
+--
+*user : FK
+*type : text
+    description: breakfast, lunch, snack, dinner...
+* date:timestamp
+* products: product
+}
+
+entity "Product" as product {
+
+}
+
+
+user}-{meal
+meal}-{product
+
+
+@enduml
